@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import ShortPost from '../components/short-post';
+import { ShortPost } from '../components/posts';
 
-const BlogIndex = (props) => {
+const BlogIndex = props => {
   const { edges: posts } = props.data.allMarkdownRemark;
 
   return (

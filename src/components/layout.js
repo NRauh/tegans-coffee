@@ -72,7 +72,7 @@ import { rhythm } from '../utils/typography';
 //   }
 // }
 
-const Layout = (props) => {
+const Layout = props => {
   const { children } = props;
 
   const layoutStyle = {
@@ -84,9 +84,7 @@ const Layout = (props) => {
 
   return (
     <div style={layoutStyle}>
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
     </div>
   );
 };

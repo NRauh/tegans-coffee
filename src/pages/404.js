@@ -8,7 +8,7 @@ const NotFoundPage = () => (
   <div>
     <h1>Not found page</h1>
   </div>
-)
+);
 
 // class NotFoundPage extends React.Component {
 //   render() {

@@ -1,21 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
+import { PostTitle, PostSubtitle } from '../components/posts';
 
-const BlogPostTemplate = (props) => {
+const BlogPostTemplate = props => {
   const post = props.data.markdownRemark;
 
   return (
     <Layout>
       <article>
         <header>
-          <h1>
-            {post.frontmatter.title}
-          </h1>
+          <PostTitle>{post.frontmatter.title}</PostTitle>
 
-          <h2>
-            {post.frontmatter.date}
-          </h2>
+          <PostSubtitle>{post.frontmatter.date}</PostSubtitle>
         </header>
 
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
