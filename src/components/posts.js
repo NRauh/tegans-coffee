@@ -1,30 +1,45 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-export const PostTitle = props => {
+const PostTitle = props => {
+  const {
+    titleTag: TitleTag,
+    link,
+    children
+  } = props;
+
   let content;
 
-  if (props.link) {
-    content = <Link to={props.link}>{props.children}</Link>;
+  if (link) {
+    content = <Link to={link}>{children}</Link>;
   } else {
-    content = props.children;
+    content = children;
   }
 
-  return <h2>{content}</h2>;
-};
-
-export const PostSubtitle = props => {
-  return <h3>{props.children}</h3>;
-};
-
-export const ShortPost = props => {
   return (
-    <article>
-      <header>
-        <PostTitle link={props.slug}>{props.title}</PostTitle>
+    <TitleTag>
+      {content}
+    </TitleTag>
+  );
+};
 
-        <PostSubtitle>{props.date}</PostSubtitle>
-      </header>
-    </article>
+export const PostHeader = props => {
+  const {
+    titleTag,
+    slug,
+    title,
+    subtitleTag: SubtitleTag
+  } = props;
+
+  return (
+    <header>
+      <PostTitle link={slug} titleTag={titleTag}>
+        {title}
+      </PostTitle>
+
+      <SubtitleTag>
+        {props.date}
+      </SubtitleTag>
+    </header>
   );
 };

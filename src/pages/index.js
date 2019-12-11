@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import { ShortPost } from '../components/posts';
+import { PostHeader } from '../components/posts';
 
 const BlogIndex = props => {
   const { edges: posts } = props.data.allMarkdownRemark;
@@ -9,12 +9,15 @@ const BlogIndex = props => {
   return (
     <Layout>
       {posts.map(({ node: post }) => (
-        <ShortPost
-          key={post.fields.slug}
-          title={post.frontmatter.title}
-          slug={post.fields.slug}
-          date={post.frontmatter.date}
-        />
+        <article key={post.fields.slug}>
+          <PostHeader
+            title={post.frontmatter.title}
+            slug={post.fields.slug}
+            date={post.frontmatter.date}
+            titleTag="h2"
+            subtitleTag="h3"
+          />
+        </article>
       ))}
     </Layout>
   );

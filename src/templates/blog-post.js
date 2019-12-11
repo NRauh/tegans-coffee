@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import { PostTitle, PostSubtitle } from '../components/posts';
+import { PostHeader } from '../components/posts';
 
 const BlogPostTemplate = props => {
   const post = props.data.markdownRemark;
@@ -9,11 +9,12 @@ const BlogPostTemplate = props => {
   return (
     <Layout>
       <article>
-        <header>
-          <PostTitle>{post.frontmatter.title}</PostTitle>
-
-          <PostSubtitle>{post.frontmatter.date}</PostSubtitle>
-        </header>
+        <PostHeader
+          title={post.frontmatter.title}
+          date={post.frontmatter.date}
+          titleTag="h1"
+          subtitleTag="h2"
+        />
 
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
