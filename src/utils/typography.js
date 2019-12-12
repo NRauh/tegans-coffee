@@ -29,6 +29,10 @@ const typography = new Typography({
       'a:hover': {
         color: themeColors.linkActive,
       },
+
+      p: {
+        textAlign: 'justify',
+      },
     };
   },
 });
