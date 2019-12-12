@@ -1,5 +1,5 @@
 ---
-title: "Cross Compiling Rust for CHIP on macOS"
+title: Cross Compiling Rust for CHIP on macOS
 date: 2017-09-04
 categories: [Rust, CHIP, macOS]
 ---
@@ -17,7 +17,7 @@ To do this we can leverage musl-cross-make as a way to do this.
 The easiest way to install musl is using the [homebrew-musl-cross](https://github.com/FiloSottile/homebrew-musl-cross) formula (install Homebrew if you don't already have it).
 There are a few options you can run the install with, so check out that link if you want to see them.
 
-We need to install it using the `--with-arm` flag, and for our need now we don't really care about the x86_64 stuff, so we can also use `--without-x86_64`.
+We need to install it using the `--with-arm` flag, and for our need now we don't really care about the x86\_64 stuff, so we can also use `--without-x86_64`.
 Overall the command we need to run is `brew install FiloSottile/musl-cross/musl-cross --with-arm --without-x86_64`.
 
 This will probably take a while to build (it took me ~40 minutes).

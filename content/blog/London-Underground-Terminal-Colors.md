@@ -1,5 +1,5 @@
 ---
-title: "Make your terminal pretty with the London Underground"
+title: Make your terminal pretty with the London Underground
 date: 2017-02-07
 category: Terminal
 ---

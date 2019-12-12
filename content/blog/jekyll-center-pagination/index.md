@@ -1,5 +1,5 @@
 ---
-title: "How to Make a Centered Pagination (with Jekyll)"
+title: How to Make a Centered Pagination (with Jekyll)
 date: 2016-10-28
 category: Jekyll
 ---
@@ -12,34 +12,32 @@ Here is what it will look like.
 
 Create a div for your pagination, and a ul within that.
 
-{% raw %}
-
 ```html
 <div class="pagination">
-	<ul>
-	</ul>
+  <ul>
+  </ul>
 </div>
 ```
 
-Now within the <ul> tag, we're going to add links to the next and previous page, if those pages exist (note: `/blog/1` is an invalid url, so we have to be sure that the first page link goes to just `/blog/`).
+Now within the `<ul>` tag, we're going to add links to the next and previous page, if those pages exist (note: `/blog/1` is an invalid url, so we have to be sure that the first page link goes to just `/blog/`).
 
 ```html
 <ul>
-	<!-- go back -->
-	{% if paginator.previous_page %}
-		<li>
-			{% paginator.previous_page != 1 %}
-				<a href="/blog/{{ paginator.previous_page }}">&lt;</a>
-			{% else %}
-				<a href="/blog/">&lt;</a>
-			{% endif %}
-		</li>
-	{% endif %}
-	
-	<!-- go forward -->
-	{% if paginator.next_page %}
-		<li><a href="/blog/{{ paginator.next_page }}">&gt;</a></li>
-	{% endif %}
+  <!-- go back -->
+  {% if paginator.previous_page %}
+    <li>
+      {% paginator.previous_page != 1 %}
+        <a href="/blog/{{ paginator.previous_page }}">&lt;</a>
+      {% else %}
+        <a href="/blog/">&lt;</a>
+      {% endif %}
+    </li>
+  {% endif %}
+  
+  <!-- go forward -->
+  {% if paginator.next_page %}
+    <li><a href="/blog/{{ paginator.next_page }}">&gt;</a></li>
+  {% endif %}
 </ul>
 ```
 
@@ -49,7 +47,7 @@ Before the go back link add:
 
 ```html
 {% if paginator.page != 1 %}
-	<li><a href="/blog/">&lt;&lt;</a></li>
+  <li><a href="/blog/">&lt;&lt;</a></li>
 {% endif %}
 ```
 
@@ -57,7 +55,7 @@ After the go forward link:
 
 ```html
 {% if paginator.page != paginator.total_pages %}
-	<li><a href="/blog/{{ paginator.total_pages }}">&gt;&gt;
+  <li><a href="/blog/{{ paginator.total_pages }}">&gt;&gt;
 {% endif %}
 ```
 
@@ -68,7 +66,7 @@ between the go back and forward links add:
 ```html
 {% assign pagination_start = paginator.page | minus: 2 %}
 {% if pagination_start == -1 or pagination_start == 0 %}
-	{% assign pagination_start = 1 %}
+  {% assign pagination_start = 1 %}
 {% endif %}
 ```
 
@@ -79,7 +77,7 @@ Below this add
 ```html
 {% assign pagination_end = paginator.page | plus: 2 %}
 {% if pagination_end > paginator.total_pages %}
-	{% assign pagination_end = paginator.total_pages %}
+  {% assign pagination_end = paginator.total_pages %}
 {% endif %}
 ```
 
@@ -89,7 +87,7 @@ We want to have at least five pages showing (assuming 5 or more pages exist), an
 
 ```html
 {% if pagination_end < 5 and paginator.total_pages > 5 %}
-	{% assign pagination_end = 5 %}
+  {% assign pagination_end = 5 %}
 {% endif %}
 ```
 
@@ -99,17 +97,17 @@ Ok, so we have a range of pages, now let's actually show them. To do this we're 
 
 ```html
 {% for i in (pagination_start .. pagination_end) %}
-	{% if i != 1 %}
-		{% assign page_href = "/blog/" | append: i %}
-	{% else %}
-		{% assign page_href = "/blog" %}
-	{% endif %}
-	
-	{% if i == paginator.page %}
-		<li class="current-page"><a href="{{ page_href }}">{{ i }}</a></li>
-	{% else %}
-		<li><a href="{{ page_href }}">{{ i }}</a></li>
-	{% endif %}
+  {% if i != 1 %}
+    {% assign page_href = "/blog/" | append: i %}
+  {% else %}
+    {% assign page_href = "/blog" %}
+  {% endif %}
+  
+  {% if i == paginator.page %}
+    <li class="current-page"><a href="{{ page_href }}">{{ i }}</a></li>
+  {% else %}
+    <li><a href="{{ page_href }}">{{ i }}</a></li>
+  {% endif %}
 {% endfor %}
 ```
 
@@ -119,54 +117,54 @@ This shows the surrounding page with proper links, and lets us style the current
 
 ```html
 <div class="pagination">
-	<ul>
-		{% if paginator.page != 1 %}
-			<li><a href="/blog/">&lt;&lt;</a></li>
-		{% endif %}
-		{% if paginator.previous_page %}
-			<li>
-				{% if paginator.previous_page != 1 %}
-					<a href="/blog/{{ paginator.previous_page }}">&lt;</a></li>
-				{% else %}
-					<a href="/blog/">&lt;</a>
-				{% endif %}
-			</li>
-		{% endif %}
+  <ul>
+    {% if paginator.page != 1 %}
+      <li><a href="/blog/">&lt;&lt;</a></li>
+    {% endif %}
+    {% if paginator.previous_page %}
+      <li>
+        {% if paginator.previous_page != 1 %}
+          <a href="/blog/{{ paginator.previous_page }}">&lt;</a></li>
+        {% else %}
+          <a href="/blog/">&lt;</a>
+        {% endif %}
+      </li>
+    {% endif %}
 
-		{% assign pagination_start = paginator.page | minus: 2 %}
-		{% if pagination_start == -1 or pagination_start == 0 %}
-			{% assign pagination_start = 1 %}
-		{% endif %}
+    {% assign pagination_start = paginator.page | minus: 2 %}
+    {% if pagination_start == -1 or pagination_start == 0 %}
+      {% assign pagination_start = 1 %}
+    {% endif %}
 
-		{% assign pagination_end = paginator.page | plus: 2 %}
-		{% if pagination_end > paginator.total_pages %}
-			{% assign pagination_end = paginator.total_pages %}
-		{% endif %}
-		{% if pagination_end < 5 and paginator.total_pages > 5 %}
-			{% assign pagination_end = 5 %}
-		{% endif %}
+    {% assign pagination_end = paginator.page | plus: 2 %}
+    {% if pagination_end > paginator.total_pages %}
+      {% assign pagination_end = paginator.total_pages %}
+    {% endif %}
+    {% if pagination_end < 5 and paginator.total_pages > 5 %}
+      {% assign pagination_end = 5 %}
+    {% endif %}
 
-		{% for i in (pagination_start .. pagination_end) %}
-			{% if i != 1 %}
-				{% assign page_href = "/blog/" | append: i %}
-			{% else %}
-				{% assign page_href = "/blog" %}
-			{% endif %}
+    {% for i in (pagination_start .. pagination_end) %}
+      {% if i != 1 %}
+        {% assign page_href = "/blog/" | append: i %}
+      {% else %}
+        {% assign page_href = "/blog" %}
+      {% endif %}
 
-			{% if i == paginator.page %}
-				<li class="current-page"><a href="{{ page_href }}">{{ i }}</a></li>
-			{% else %}
-				<li><a href="{{ page_href }}">{{ i }}</a></li>
-			{% endif %}
-		{% endfor %}
+      {% if i == paginator.page %}
+        <li class="current-page"><a href="{{ page_href }}">{{ i }}</a></li>
+      {% else %}
+        <li><a href="{{ page_href }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
 
-		{% if paginator.next_page %}
-			<li><a href="/blog/{{ paginator.next_page }}">&gt;</a></li>
-		{% endif %}
-		{% if paginator.page != paginator.total_pages %}
-			<li><a href="/blog/{{ paginator.total_pages }}">&gt;&gt;</a></li>
-			{% endif %}
-	</ul>
+    {% if paginator.next_page %}
+      <li><a href="/blog/{{ paginator.next_page }}">&gt;</a></li>
+    {% endif %}
+    {% if paginator.page != paginator.total_pages %}
+      <li><a href="/blog/{{ paginator.total_pages }}">&gt;&gt;</a></li>
+      {% endif %}
+  </ul>
 </div>
 ```
 
@@ -197,4 +195,3 @@ A quick example of how to style it can be done like this with your CSS
   color: red;
 }
 ```
-{% endraw %}
