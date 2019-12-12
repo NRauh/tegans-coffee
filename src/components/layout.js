@@ -85,9 +85,7 @@ const Layout = props => {
 
   return (
     <div style={layoutStyle}>
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
 
       <Bio />
     </div>

@@ -38,16 +38,13 @@ export const Bio = () => {
       />
 
       <p>
-        I'm Tegan.
-        By day I'm a web developer.
-        By night, I'm someone who's a web developer by day.
+        I'm Tegan. By day I'm a web developer. By night, I'm someone who's a web
+        developer by day.
       </p>
 
       <p>
-        <a href={`https://twitter.com/${social.twitter}`}>
-          Twitter
-        </a>
+        <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
       </p>
     </div>
   );
-}
+};
