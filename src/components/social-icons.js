@@ -37,8 +37,8 @@ export const GitHubIcon = () => {
       style={socialIconStyles}
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M22.4773 0.926669C10.4853 0.926669 0.759979 10.6507 0.759979
           22.6467C0.759979 32.2414 6.98265 40.3827 15.6133 43.256C16.7 43.4547
           17.096 42.784 17.096 42.208C17.096 41.692 17.0773 40.3267 17.0667
