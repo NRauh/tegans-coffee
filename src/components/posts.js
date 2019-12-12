@@ -4,7 +4,7 @@ import { themeColors } from '../utils/theme';
 import { rhythm } from '../utils/typography';
 
 const PostTitle = props => {
-  const { titleTag: TitleTag, link, children } = props;
+  const { titleTag: TitleTag, link, children, center } = props;
 
   let content;
 
@@ -16,13 +16,18 @@ const PostTitle = props => {
 
   const titleStyles = {
     marginBottom: rhythm(0.5),
+    color: themeColors.link,
   };
+
+  if (center) {
+    titleStyles.textAlign = 'center';
+  }
 
   return <TitleTag style={titleStyles}>{content}</TitleTag>;
 };
 
 export const PostHeader = props => {
-  const { titleTag, slug, title, subtitleTag: SubtitleTag } = props;
+  const { titleTag, slug, title, center, subtitleTag: SubtitleTag } = props;
 
   const headerStyles = {
     marginBottom: rhythm(1.25),
@@ -34,9 +39,13 @@ export const PostHeader = props => {
     marginBottom: rhythm(0),
   };
 
+  if (center) {
+    subtitleStyles.textAlign = 'center';
+  }
+
   return (
     <header style={headerStyles}>
-      <PostTitle link={slug} titleTag={titleTag}>
+      <PostTitle link={slug} titleTag={titleTag} center={center}>
         {title}
       </PostTitle>
 

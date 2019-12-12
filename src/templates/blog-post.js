@@ -14,6 +14,7 @@ const BlogPostTemplate = props => {
           date={post.frontmatter.date}
           titleTag="h1"
           subtitleTag="h2"
+          center
         />
 
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
