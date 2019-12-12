@@ -1,7 +1,43 @@
 import Typography from 'typography';
-import TwinPeaks from 'typography-theme-twin-peaks';
 
-const typography = new Typography(TwinPeaks);
+const typography = new Typography({
+  baseFontSize: '21px',
+  baseLineHeight: 1.7,
+  scaleRatio: 2.5,
+  headerFontFamily: ['Karla', 'sans-serif'],
+  bodyFontFamily: ['Lora', 'serif'],
+  googleFonts: [
+    {
+      name: 'Karla',
+      styles: [
+        '700',
+      ],
+    },
+    {
+      name: 'Lora',
+      styles: [
+        '400',
+        '400i',
+        '700',
+        '700i',
+      ],
+    },
+  ],
+  headerWeight: 700,
+  bodyWeight: 400,
+  boldWeight: 700,
+
+  overrideStyles(typography, options, styles) {
+    return {
+      a: {
+        color: '#037ac6',
+      },
+      'a:hover': {
+        color: '#0499f6',
+      },
+    };
+  },
+});
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
