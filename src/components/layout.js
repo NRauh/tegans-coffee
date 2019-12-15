@@ -1,8 +1,8 @@
 import React from 'react';
-// import { Link } from 'gatsby';
-
+import { Link } from 'gatsby';
 import { rhythm } from '../utils/typography';
 import { Bio } from './bio';
+import { themeColors } from '../utils/theme';
 
 // class Layout extends React.Component {
 //   render() {
@@ -73,6 +73,33 @@ import { Bio } from './bio';
 //   }
 // }
 
+const Header = props => {
+  const styles = {
+    headerFrame: {
+      backgroundColor: themeColors.light,
+      padding: `${rhythm(0.35)} ${rhythm(0.5)}`,
+    },
+    name: {
+      marginBottom: rhythm(0),
+      fontSize: rhythm(0.75),
+    },
+    nameLink: {
+      color: themeColors.muted,
+      textDecoration: 'none',
+    },
+  };
+
+  return (
+    <header style={styles.headerFrame}>
+      <h2 style={styles.name}>
+        <Link to="/" style={styles.nameLink}>
+          Tegan Rauh
+        </Link>
+      </h2>
+    </header>
+  );
+};
+
 const Layout = props => {
   const { children } = props;
 
@@ -84,10 +111,14 @@ const Layout = props => {
   };
 
   return (
-    <div style={layoutStyle}>
-      <main>{children}</main>
+    <div>
+      <Header />
 
-      <Bio />
+      <div style={layoutStyle}>
+        <main>{children}</main>
+
+        <Bio />
+      </div>
     </div>
   );
 };
