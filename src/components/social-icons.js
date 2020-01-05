@@ -12,7 +12,7 @@ export const TwitterIcon = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 400 400"
-      style={socialIconStyles}
+      css={socialIconStyles}
     >
       <path
         d="M400,200c0,110.5-89.5,200-200,200S0,310.5,0,200S89.5,0,200,0S400,89.5,
@@ -34,7 +34,7 @@ export const GitHubIcon = () => {
     <svg
       viewBox="0 0 45 44"
       xmlns="http://www.w3.org/2000/svg"
-      style={socialIconStyles}
+      css={socialIconStyles}
     >
       <path
         fillRule="evenodd"

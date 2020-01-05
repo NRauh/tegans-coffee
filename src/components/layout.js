@@ -17,7 +17,7 @@ const Layout = props => {
     <div>
       <SiteHeader />
 
-      <div style={layoutStyle}>
+      <div css={layoutStyle}>
         <main>{children}</main>
 
         <Bio />

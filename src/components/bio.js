@@ -60,14 +60,14 @@ export const Bio = () => {
   };
 
   return (
-    <div style={bioStyles}>
-      <h3 style={titleStyles}>About Me</h3>
+    <div css={bioStyles}>
+      <h3 css={titleStyles}>About Me</h3>
 
-      <div style={imageStyles.container}>
+      <div css={imageStyles.container}>
         <Image
           fixed={data.avatar.childImageSharp.fixed}
           alt={author}
-          style={imageStyles.component}
+          css={imageStyles.component}
           imgStyle={imageStyles.img}
         />
       </div>
@@ -77,11 +77,11 @@ export const Bio = () => {
         developer by day.
       </p>
 
-      <div style={socialLinks.container}>
+      <div css={socialLinks.container}>
         <a
           href={`https://twitter.com/${social.twitter}`}
           title="Twitter"
-          style={socialLinks.socialIcon}
+          css={socialLinks.socialIcon}
         >
           <TwitterIcon />
         </a>
@@ -89,7 +89,7 @@ export const Bio = () => {
         <a
           href={`https://github.com/${social.github}`}
           title="GitHub"
-          style={socialLinks.socialIcon}
+          css={socialLinks.socialIcon}
         >
           <GitHubIcon />
         </a>

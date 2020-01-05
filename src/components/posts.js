@@ -23,7 +23,7 @@ const PostTitle = props => {
     titleStyles.textAlign = 'center';
   }
 
-  return <TitleTag style={titleStyles}>{content}</TitleTag>;
+  return <TitleTag css={titleStyles}>{content}</TitleTag>;
 };
 
 export const PostHeader = props => {
@@ -44,12 +44,12 @@ export const PostHeader = props => {
   }
 
   return (
-    <header style={headerStyles}>
+    <header css={headerStyles}>
       <PostTitle link={slug} titleTag={titleTag} center={center}>
         {title}
       </PostTitle>
 
-      <SubtitleTag style={subtitleStyles}>{props.date}</SubtitleTag>
+      <SubtitleTag css={subtitleStyles}>{props.date}</SubtitleTag>
     </header>
   );
 };
