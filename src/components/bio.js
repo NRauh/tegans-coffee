@@ -61,7 +61,7 @@ const SocialLinks = ({ twitterName, githubName }) => {
       </a>
     </div>
   );
-}
+};
 
 export const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -99,20 +99,14 @@ export const Bio = () => {
     <div css={bioStyles}>
       <h3 css={titleStyles}>About Me</h3>
 
-      <BioImage
-        image={data.avatar.childImageSharp.fixed}
-        alt={author}
-      />
+      <BioImage image={data.avatar.childImageSharp.fixed} alt={author} />
 
       <p>
         I'm Tegan. By day I'm a web developer. By night, I'm someone who's a web
         developer by day.
       </p>
 
-      <SocialLinks
-        twitterName={social.twitter}
-        githubName={social.github}
-      />
+      <SocialLinks twitterName={social.twitter} githubName={social.github} />
     </div>
   );
 };
