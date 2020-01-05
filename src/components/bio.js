@@ -4,6 +4,65 @@ import Image from 'gatsby-image';
 import { rhythm } from '../utils/typography';
 import { TwitterIcon, GitHubIcon } from './social-icons';
 
+const BioImage = ({ image, alt }) => {
+  const styles = {
+    container: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    component: {
+      marginBottom: rhythm(0.5),
+    },
+    img: {
+      borderRadius: '50%',
+      marginBottom: rhythm(0.5),
+    },
+  };
+
+  return (
+    <div css={styles.container}>
+      <Image
+        fixed={image}
+        alt={alt}
+        css={styles.component}
+        imgStyle={styles.img}
+      />
+    </div>
+  );
+};
+
+const SocialLinks = ({ twitterName, githubName }) => {
+  const styles = {
+    container: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    socialIcon: {
+      margin: `0 ${rhythm(0.25)}`,
+    },
+  };
+
+  return (
+    <div css={styles.container}>
+      <a
+        href={`https://twitter.com/${twitterName}`}
+        title="Twitter"
+        css={styles.socialIcon}
+      >
+        <TwitterIcon />
+      </a>
+
+      <a
+        href={`https://github.com/${githubName}`}
+        title="GitHub"
+        css={styles.socialIcon}
+      >
+        <GitHubIcon />
+      </a>
+    </div>
+  );
+}
+
 export const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -35,65 +94,25 @@ export const Bio = () => {
   const bioStyles = {
     marginTop: rhythm(2),
   };
-  const imageStyles = {
-    container: {
-      display: 'flex',
-      justifyContent: 'center',
-    },
-    component: {
-      marginBottom: rhythm(0.5),
-    },
-    img: {
-      borderRadius: '50%',
-      marginBottom: rhythm(0.5),
-    },
-  };
-
-  const socialLinks = {
-    container: {
-      display: 'flex',
-      justifyContent: 'center',
-    },
-    socialIcon: {
-      margin: `0 ${rhythm(0.25)}`,
-    },
-  };
 
   return (
     <div css={bioStyles}>
       <h3 css={titleStyles}>About Me</h3>
 
-      <div css={imageStyles.container}>
-        <Image
-          fixed={data.avatar.childImageSharp.fixed}
-          alt={author}
-          css={imageStyles.component}
-          imgStyle={imageStyles.img}
-        />
-      </div>
+      <BioImage
+        image={data.avatar.childImageSharp.fixed}
+        alt={author}
+      />
 
       <p>
         I'm Tegan. By day I'm a web developer. By night, I'm someone who's a web
         developer by day.
       </p>
 
-      <div css={socialLinks.container}>
-        <a
-          href={`https://twitter.com/${social.twitter}`}
-          title="Twitter"
-          css={socialLinks.socialIcon}
-        >
-          <TwitterIcon />
-        </a>
-
-        <a
-          href={`https://github.com/${social.github}`}
-          title="GitHub"
-          css={socialLinks.socialIcon}
-        >
-          <GitHubIcon />
-        </a>
-      </div>
+      <SocialLinks
+        twitterName={social.twitter}
+        githubName={social.github}
+      />
     </div>
   );
 };
