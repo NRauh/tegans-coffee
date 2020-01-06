@@ -1,7 +1,7 @@
 import React from 'react';
 import { rhythm } from '../utils/typography';
-import { Bio } from './bio';
-import { SiteHeader } from './site-header';
+import Bio from './bio';
+import SiteHeader from './site-header';
 
 const Layout = props => {
   const { children } = props;

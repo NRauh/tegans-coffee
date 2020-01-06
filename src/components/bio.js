@@ -63,7 +63,7 @@ const SocialLinks = ({ twitterName, githubName }) => {
   );
 };
 
-export const Bio = () => {
+const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
@@ -102,11 +102,13 @@ export const Bio = () => {
       <BioImage image={data.avatar.childImageSharp.fixed} alt={author} />
 
       <p>
-        I'm Tegan. By day I'm a web developer. By night, I'm someone who's a web
-        developer by day.
+        I&apos;m Tegan. By day I&apos;m a web developer. By night, I&apos;m
+        someone who&apos;s a web developer by day.
       </p>
 
       <SocialLinks twitterName={social.twitter} githubName={social.github} />
     </div>
   );
 };
+
+export default Bio;

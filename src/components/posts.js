@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { themeColors } from '../utils/theme';
+import ThemeColors from '../utils/theme';
 import { rhythm } from '../utils/typography';
 
 const PostTitle = props => {
@@ -16,7 +16,7 @@ const PostTitle = props => {
 
   const titleStyles = {
     marginBottom: rhythm(0.5),
-    color: themeColors.link,
+    color: ThemeColors.link,
   };
 
   if (center) {
@@ -26,15 +26,22 @@ const PostTitle = props => {
   return <TitleTag css={titleStyles}>{content}</TitleTag>;
 };
 
-export const PostHeader = props => {
-  const { titleTag, slug, title, center, subtitleTag: SubtitleTag } = props;
+const PostHeader = props => {
+  const {
+    titleTag,
+    slug,
+    title,
+    center,
+    date,
+    subtitleTag: SubtitleTag,
+  } = props;
 
   const headerStyles = {
     marginBottom: rhythm(1.25),
   };
 
   const subtitleStyles = {
-    color: themeColors.muted,
+    color: ThemeColors.muted,
     fontSize: rhythm(5 / 9),
     marginBottom: rhythm(0),
   };
@@ -49,7 +56,9 @@ export const PostHeader = props => {
         {title}
       </PostTitle>
 
-      <SubtitleTag css={subtitleStyles}>{props.date}</SubtitleTag>
+      <SubtitleTag css={subtitleStyles}>{date}</SubtitleTag>
     </header>
   );
 };
+
+export default PostHeader;

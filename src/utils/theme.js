@@ -4,3 +4,5 @@ export const themeColors = {
   muted: '#727272',
   light: '#f5f5f5',
 };
+
+export default themeColors;

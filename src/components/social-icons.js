@@ -1,10 +1,10 @@
 import React from 'react';
-import { themeColors } from '../utils/theme';
+import ThemeColors from '../utils/theme';
 import { rhythm } from '../utils/typography';
 
 const socialIconStyles = {
   width: rhythm(1.15),
-  fill: themeColors.muted,
+  fill: ThemeColors.muted,
 };
 
 export const TwitterIcon = () => {

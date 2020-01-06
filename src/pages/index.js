@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import { PostHeader } from '../components/posts';
+import PostHeader from '../components/posts';
 
-const BlogIndex = props => {
-  const { edges: posts } = props.data.allMarkdownRemark;
+const BlogIndex = ({ data }) => {
+  const { edges: posts } = data.allMarkdownRemark;
 
   return (
     <Layout>

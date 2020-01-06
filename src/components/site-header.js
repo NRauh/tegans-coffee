@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { rhythm } from '../utils/typography';
-import { themeColors } from '../utils/theme';
+import ThemeColors from '../utils/theme';
 
-export const SiteHeader = props => {
+const SiteHeader = () => {
   const styles = {
     headerFrame: {
-      backgroundColor: themeColors.light,
+      backgroundColor: ThemeColors.light,
       padding: `${rhythm(0.35)} ${rhythm(0.5)}`,
     },
     name: {
@@ -14,7 +14,7 @@ export const SiteHeader = props => {
       fontSize: rhythm(0.75),
     },
     nameLink: {
-      color: themeColors.muted,
+      color: ThemeColors.muted,
       textDecoration: 'none',
     },
   };
@@ -29,3 +29,5 @@ export const SiteHeader = props => {
     </header>
   );
 };
+
+export default SiteHeader;

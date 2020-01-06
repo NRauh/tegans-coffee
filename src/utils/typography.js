@@ -1,5 +1,5 @@
 import Typography from 'typography';
-import { themeColors } from './theme';
+import ThemeColors from './theme';
 
 const typography = new Typography({
   baseFontSize: '21px',
@@ -21,13 +21,13 @@ const typography = new Typography({
   bodyWeight: 400,
   boldWeight: 700,
 
-  overrideStyles(typography, options, styles) {
+  overrideStyles() {
     return {
       a: {
-        color: themeColors.link,
+        color: ThemeColors.link,
       },
       'a:hover': {
-        color: themeColors.linkActive,
+        color: ThemeColors.linkActive,
       },
 
       p: {
@@ -43,5 +43,4 @@ if (process.env.NODE_ENV !== `production`) {
 }
 
 export default typography;
-export const rhythm = typography.rhythm;
-export const scale = typography.scale;
+export const { rhythm, scale } = typography;
