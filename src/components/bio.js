@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import { rhythm } from '../utils/typography';
-import { TwitterIcon, GitHubIcon } from './social-icons';
+import SocialLinks from './social-links';
 
 const BioImage = ({ image, alt }) => {
   const styles = {
@@ -27,38 +27,6 @@ const BioImage = ({ image, alt }) => {
         css={styles.component}
         imgStyle={styles.img}
       />
-    </div>
-  );
-};
-
-const SocialLinks = ({ twitterName, githubName }) => {
-  const styles = {
-    container: {
-      display: 'flex',
-      justifyContent: 'center',
-    },
-    socialIcon: {
-      margin: `0 ${rhythm(0.25)}`,
-    },
-  };
-
-  return (
-    <div css={styles.container}>
-      <a
-        href={`https://twitter.com/${twitterName}`}
-        title="Twitter"
-        css={styles.socialIcon}
-      >
-        <TwitterIcon />
-      </a>
-
-      <a
-        href={`https://github.com/${githubName}`}
-        title="GitHub"
-        css={styles.socialIcon}
-      >
-        <GitHubIcon />
-      </a>
     </div>
   );
 };
