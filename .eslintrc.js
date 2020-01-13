@@ -26,4 +26,12 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/prop-types': 'off',
   },
+  overrides: [
+    {
+      files: ['*.spec.js', '**/__mocks__/*.js', 'loadershim.js'],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };

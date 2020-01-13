@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SiteHeader renders correctly 1`] = `
+<header
+  css={
+    Object {
+      "backgroundColor": "#f5f5f5",
+      "padding": "0.63rem 0.9rem",
+    }
+  }
+>
+  <h2
+    css={
+      Object {
+        "fontSize": "1.35rem",
+        "marginBottom": "0rem",
+      }
+    }
+  >
+    <a
+      css={
+        Object {
+          "color": "#727272",
+          "textDecoration": "none",
+        }
+      }
+      href="/"
+    >
+      Tegan Rauh
+    </a>
+  </h2>
+</header>
+`;
