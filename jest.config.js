@@ -12,7 +12,7 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: '',
   },
-  setupFiles: ['<rootDir>/loadershim.js'],
+  setupFiles: ['<rootDir>/loadershim.js', '<rootDir>/enzyme-setup.js'],
 
   // Make calling deprecated APIs throw helpful error messages
   // errorOnDeprecated: false,

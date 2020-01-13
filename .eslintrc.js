@@ -28,7 +28,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.spec.js', '**/__mocks__/*.js', 'loadershim.js'],
+      files: ['*.spec.js', '**/__mocks__/*.js', 'loadershim.js', 'enzyme-setup.js'],
       env: {
         jest: true,
       },
