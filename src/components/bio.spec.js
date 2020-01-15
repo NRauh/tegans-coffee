@@ -8,7 +8,7 @@ describe('Bio', () => {
     const fakeData = {
       avatar: {
         childImageSharp: {
-          fixed: 'fixedUrl',
+          fixed: {},
         },
       },
       site: {

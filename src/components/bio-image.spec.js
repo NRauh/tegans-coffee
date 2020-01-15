@@ -4,7 +4,14 @@ import BioImage from './bio-image';
 
 describe('BioImage', () => {
   it('renders', () => {
-    const wrapper = shallow(<BioImage image="/foo.jpg" alt="test" />);
+    const image = {
+      base64: 'somehash',
+      width: 100,
+      height: 100,
+      src: 'foo.png',
+      srcSet: 'foo.png 2x',
+    };
+    const wrapper = shallow(<BioImage image={image} alt="test" />);
     expect(wrapper.debug()).toBeDefined();
   });
 });
