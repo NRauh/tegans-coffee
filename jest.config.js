@@ -1,7 +1,7 @@
 module.exports = {
   clearMocks: true,
   transform: {
-    '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`,
+    '^.+\\.jsx?$': `<rootDir>/jest-utils/jest-preprocess.js`,
   },
   moduleNameMapper: {
     '.+\\.(css|styl|less|sass|scss)$': `identity-obj-proxy`,
@@ -13,9 +13,9 @@ module.exports = {
     __PATH_PREFIX__: '',
   },
   setupFiles: [
-    '<rootDir>/loadershim.js',
-    '<rootDir>/enzyme-setup.js',
-    '<rootDir>/prop-type-validation.js',
+    '<rootDir>/jest-utils/loadershim.js',
+    '<rootDir>/jest-utils/enzyme-setup.js',
+    '<rootDir>/jest-utils/prop-type-validation.js',
   ],
 
   // Make calling deprecated APIs throw helpful error messages
