@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import PostHeader from '../components/posts';
+import PostHeader from '../components/post-header';
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;
