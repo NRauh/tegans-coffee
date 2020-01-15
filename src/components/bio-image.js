@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Image from 'gatsby-image';
 import { rhythm } from '../utils/typography';
 
@@ -27,6 +28,11 @@ const BioImage = ({ image, alt }) => {
       />
     </div>
   );
+};
+
+BioImage.propTypes = {
+  image: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  alt: PropTypes.string.isRequired,
 };
 
 export default BioImage;

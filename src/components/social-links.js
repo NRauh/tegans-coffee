@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ThemeColors from '../utils/theme';
 import { rhythm } from '../utils/typography';
 
@@ -92,6 +93,11 @@ const SocialLinks = ({ twitterName, githubName }) => {
       </a>
     </div>
   );
+};
+
+SocialLinks.propTypes = {
+  twitterName: PropTypes.string.isRequired,
+  githubName: PropTypes.string.isRequired,
 };
 
 export default SocialLinks;

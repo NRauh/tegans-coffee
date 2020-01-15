@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ThemeColors from '../utils/theme';
 import { rhythm } from '../utils/typography';
 import PostTitle from './post-title';
@@ -36,6 +37,18 @@ const PostHeader = props => {
       <SubtitleTag css={subtitleStyles}>{date}</SubtitleTag>
     </header>
   );
+};
+
+PostHeader.propTypes = {
+  titleTag: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  center: PropTypes.bool,
+};
+
+PostHeader.defaultProps = {
+  center: false,
 };
 
 export default PostHeader;
