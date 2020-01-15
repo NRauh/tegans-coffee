@@ -1,67 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
 import { rhythm } from '../utils/typography';
-import { TwitterIcon, GitHubIcon } from './social-icons';
-
-const BioImage = ({ image, alt }) => {
-  const styles = {
-    container: {
-      display: 'flex',
-      justifyContent: 'center',
-    },
-    component: {
-      marginBottom: rhythm(0.5),
-    },
-    img: {
-      borderRadius: '50%',
-      marginBottom: rhythm(0.5),
-    },
-  };
-
-  return (
-    <div css={styles.container}>
-      <Image
-        fixed={image}
-        alt={alt}
-        css={styles.component}
-        imgStyle={styles.img}
-      />
-    </div>
-  );
-};
-
-const SocialLinks = ({ twitterName, githubName }) => {
-  const styles = {
-    container: {
-      display: 'flex',
-      justifyContent: 'center',
-    },
-    socialIcon: {
-      margin: `0 ${rhythm(0.25)}`,
-    },
-  };
-
-  return (
-    <div css={styles.container}>
-      <a
-        href={`https://twitter.com/${twitterName}`}
-        title="Twitter"
-        css={styles.socialIcon}
-      >
-        <TwitterIcon />
-      </a>
-
-      <a
-        href={`https://github.com/${githubName}`}
-        title="GitHub"
-        css={styles.socialIcon}
-      >
-        <GitHubIcon />
-      </a>
-    </div>
-  );
-};
+import SocialLinks from './social-links';
+import BioImage from './bio-image';
 
 const Bio = () => {
   const data = useStaticQuery(graphql`

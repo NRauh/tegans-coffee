@@ -26,4 +26,28 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/prop-types': 'off',
   },
+  overrides: [
+    {
+      files: [
+        '*.spec.js',
+        '**/__mocks__/*.js',
+        'loadershim.js',
+        'enzyme-setup.js',
+        'jest-preprocess.js',
+      ],
+      env: {
+        jest: true,
+      },
+      rules: {
+        'import/no-extraneous-dependencies': [
+          "error",
+          {
+            devDependencies: true,
+            optionalDependencies: false,
+            peerDependencies: false,
+          },
+        ],
+      },
+    },
+  ],
 };

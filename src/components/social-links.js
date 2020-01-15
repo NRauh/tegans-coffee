@@ -7,7 +7,7 @@ const socialIconStyles = {
   fill: ThemeColors.muted,
 };
 
-export const TwitterIcon = () => {
+const TwitterIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ export const TwitterIcon = () => {
   );
 };
 
-export const GitHubIcon = () => {
+const GitHubIcon = () => {
   return (
     <svg
       viewBox="0 0 45 44"
@@ -61,3 +61,37 @@ export const GitHubIcon = () => {
     </svg>
   );
 };
+
+const SocialLinks = ({ twitterName, githubName }) => {
+  const styles = {
+    container: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    socialIcon: {
+      margin: `0 ${rhythm(0.25)}`,
+    },
+  };
+
+  return (
+    <div css={styles.container}>
+      <a
+        href={`https://twitter.com/${twitterName}`}
+        title="Twitter"
+        css={styles.socialIcon}
+      >
+        <TwitterIcon />
+      </a>
+
+      <a
+        href={`https://github.com/${githubName}`}
+        title="GitHub"
+        css={styles.socialIcon}
+      >
+        <GitHubIcon />
+      </a>
+    </div>
+  );
+};
+
+export default SocialLinks;
