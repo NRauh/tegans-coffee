@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { rhythm } from '../utils/typography';
 import Bio from './bio';
 import SiteHeader from './site-header';
@@ -24,6 +25,10 @@ const Layout = props => {
       </div>
     </div>
   );
+};
+
+Layout.propTypes = {
+  children: PropTypes.element.isRequired,
 };
 
 export default Layout;
