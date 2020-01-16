@@ -4,5 +4,9 @@ update_configs:
   - package_manager: javascript
     directory: '.'
     update_schedule: live
+    automerged_updates:
+      - match:
+          dependency_type: all
+          update_type: in_range
     default_reviewers:
       - nrauh
