@@ -41,7 +41,7 @@ const PostHeader = props => {
 
 PostHeader.propTypes = {
   titleTag: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
+  slug: PropTypes.string,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   center: PropTypes.bool,
@@ -49,6 +49,7 @@ PostHeader.propTypes = {
 
 PostHeader.defaultProps = {
   center: false,
+  slug: null,
 };
 
 export default PostHeader;
