@@ -2,9 +2,16 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import PostHeader from '../components/post-header';
+import { rhythm } from '../utils/typography';
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;
+
+  const postStyles = {
+    '.gatsby-highlight': {
+      marginBottom: rhythm(1),
+    },
+  };
 
   return (
     <Layout>
@@ -17,7 +24,10 @@ const BlogPostTemplate = ({ data }) => {
           center
         />
 
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section
+          css={postStyles}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </article>
     </Layout>
   );

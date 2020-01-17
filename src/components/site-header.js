@@ -7,7 +7,7 @@ const SiteHeader = () => {
   const styles = {
     headerFrame: {
       backgroundColor: ThemeColors.light,
-      padding: `${rhythm(0.35)} ${rhythm(0.5)}`,
+      padding: `${rhythm(0.4)} ${rhythm(0.75)}`,
     },
     name: {
       marginBottom: rhythm(0),

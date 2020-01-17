@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { rhythm } from '../utils/typography';
 import SocialLinks from './social-links';
 import BioImage from './bio-image';
+import ThemeColors from '../utils/theme';
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -34,6 +35,12 @@ const Bio = () => {
   };
   const bioStyles = {
     marginTop: rhythm(2),
+    borderTop: `${rhythm(0.07)} solid ${ThemeColors.light}`,
+    paddingTop: rhythm(1),
+  };
+  const introStyles = {
+    marginTop: rhythm(0.25),
+    marginBottom: rhythm(0.5),
   };
 
   return (
@@ -42,7 +49,7 @@ const Bio = () => {
 
       <BioImage image={data.avatar.childImageSharp.fixed} alt={author} />
 
-      <p>
+      <p css={introStyles}>
         I&apos;m Tegan. By day I&apos;m a web developer. By night, I&apos;m
         someone who&apos;s a web developer by day.
       </p>

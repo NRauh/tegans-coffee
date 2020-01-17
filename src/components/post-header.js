@@ -15,7 +15,7 @@ const PostHeader = props => {
   } = props;
 
   const headerStyles = {
-    marginBottom: rhythm(1.25),
+    marginBottom: rhythm(1.75),
   };
 
   const subtitleStyles = {

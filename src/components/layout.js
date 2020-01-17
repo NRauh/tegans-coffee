@@ -11,7 +11,7 @@ const Layout = props => {
     marginLeft: 'auto',
     marginRight: 'auto',
     maxWidth: rhythm(24),
-    padding: `${rhythm(1.25)} ${rhythm(0.3)}`,
+    padding: `${rhythm(1.75)} ${rhythm(0.3)}`,
   };
 
   return (
