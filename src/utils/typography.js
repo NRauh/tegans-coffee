@@ -23,11 +23,15 @@ const typography = new Typography({
 
   overrideStyles() {
     return {
+      '*': {
+        color: ThemeColors.dark,
+      },
+
       a: {
         color: ThemeColors.link,
       },
       'a:hover': {
-        color: ThemeColors.linkActive,
+        color: ThemeColors.linkHover,
       },
 
       p: {

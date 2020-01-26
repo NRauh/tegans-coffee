@@ -19,7 +19,7 @@ const PostHeader = props => {
   };
 
   const subtitleStyles = {
-    color: ThemeColors.muted,
+    color: ThemeColors.gray300,
     fontSize: rhythm(5 / 9),
     marginBottom: rhythm(0),
   };

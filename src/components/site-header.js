@@ -6,7 +6,7 @@ import ThemeColors from '../utils/theme';
 const SiteHeader = () => {
   const styles = {
     headerFrame: {
-      backgroundColor: ThemeColors.light,
+      backgroundColor: ThemeColors.primary,
       padding: `${rhythm(0.4)} ${rhythm(0.75)}`,
     },
     name: {
@@ -14,8 +14,12 @@ const SiteHeader = () => {
       fontSize: rhythm(0.75),
     },
     nameLink: {
-      color: ThemeColors.muted,
+      color: ThemeColors.gray200,
       textDecoration: 'none',
+
+      ':hover': {
+        color: ThemeColors.gray100,
+      },
     },
   };
 

@@ -35,7 +35,7 @@ const Bio = () => {
   };
   const bioStyles = {
     marginTop: rhythm(2),
-    borderTop: `${rhythm(0.07)} solid ${ThemeColors.light}`,
+    borderTop: `${rhythm(0.07)} solid ${ThemeColors.gray200}`,
     paddingTop: rhythm(1),
   };
   const introStyles = {

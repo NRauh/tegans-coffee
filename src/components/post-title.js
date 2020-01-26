@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import ThemeColors from '../utils/theme';
 import { rhythm } from '../utils/typography';
 
 const PostTitle = props => {
@@ -17,7 +16,6 @@ const PostTitle = props => {
 
   const titleStyles = {
     marginBottom: rhythm(0.5),
-    color: ThemeColors.link,
   };
 
   if (center) {

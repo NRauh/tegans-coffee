@@ -5,7 +5,7 @@ import { rhythm } from '../utils/typography';
 
 const socialIconStyles = {
   width: rhythm(1.15),
-  fill: ThemeColors.muted,
+  fill: ThemeColors.gray300,
 };
 
 const TwitterIcon = () => {
