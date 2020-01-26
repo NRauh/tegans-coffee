@@ -50,8 +50,9 @@ const Bio = () => {
       <BioImage image={data.avatar.childImageSharp.fixed} alt={author} />
 
       <p css={introStyles}>
-        I&apos;m Tegan. By day I&apos;m a web developer. By night, I&apos;m
-        someone who&apos;s a web developer by day.
+        I&apos;m Tegan, the friendly neighborhood trans femme. By day I&apos;m a
+        web developer. By night, I&apos;m someone who&apos;s a web developer by
+        day.
       </p>
 
       <SocialLinks twitterName={social.twitter} githubName={social.github} />
