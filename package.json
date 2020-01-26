@@ -73,7 +73,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
-    "lint": "eslint --ext .js .",
+    "lint": "eslint --ext .js src jest-utils",
     "deploy": "gh-pages -d public"
   }
 }

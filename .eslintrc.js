@@ -19,9 +19,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react'],
   rules: {
     'react/jsx-filename-extension': 'off',
     'react/prop-types': 'off',
@@ -40,7 +38,7 @@ module.exports = {
       },
       rules: {
         'import/no-extraneous-dependencies': [
-          "error",
+          'error',
           {
             devDependencies: true,
             optionalDependencies: false,
