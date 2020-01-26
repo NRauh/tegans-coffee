@@ -22,6 +22,7 @@ const BlogPostTemplate = ({ data }) => {
         <PostHeader
           title={post.frontmatter.title}
           date={post.frontmatter.date}
+          readingTime={post.fields.readingTime.text}
           titleTag="h1"
           subtitleTag="h2"
           center
@@ -46,6 +47,11 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+      }
+      fields {
+        readingTime {
+          text
+        }
       }
     }
   }

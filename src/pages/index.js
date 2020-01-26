@@ -17,6 +17,7 @@ const BlogIndex = ({ data }) => {
             title={post.frontmatter.title}
             slug={post.fields.slug}
             date={post.frontmatter.date}
+            readingTime={post.fields.readingTime.text}
             titleTag="h2"
             subtitleTag="h3"
           />
@@ -35,6 +36,9 @@ export const pageQuery = graphql`
         node {
           fields {
             slug
+            readingTime {
+              text
+            }
           }
           frontmatter {
             title

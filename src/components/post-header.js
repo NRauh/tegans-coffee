@@ -11,6 +11,7 @@ const PostHeader = props => {
     title,
     center,
     date,
+    readingTime,
     subtitleTag: SubtitleTag,
   } = props;
 
@@ -34,7 +35,11 @@ const PostHeader = props => {
         {title}
       </PostTitle>
 
-      <SubtitleTag css={subtitleStyles}>{date}</SubtitleTag>
+      <SubtitleTag css={subtitleStyles}>
+        {date}
+        &mdash;
+        {readingTime}
+      </SubtitleTag>
     </header>
   );
 };
@@ -44,6 +49,7 @@ PostHeader.propTypes = {
   slug: PropTypes.string,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
+  readingTime: PropTypes.string.isRequired,
   center: PropTypes.bool,
 };
 

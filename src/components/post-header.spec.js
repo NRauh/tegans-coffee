@@ -10,6 +10,7 @@ describe('PostHeader', () => {
         slug="/foo"
         title="Test"
         date="Oct. 15, 2019"
+        readingTime="1 minute read"
         subtitleTag="h2"
       />
     );
