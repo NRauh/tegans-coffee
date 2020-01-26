@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import PostHeader from '../components/post-header';
 import { rhythm } from '../utils/typography';
+import SEO from '../components/seo';
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark;
@@ -15,6 +16,8 @@ const BlogPostTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={post.frontmatter.title} description={post.excerpt} />
+
       <article>
         <PostHeader
           title={post.frontmatter.title}
@@ -38,6 +41,7 @@ export default BlogPostTemplate;
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      excerpt(pruneLength: 160)
       html
       frontmatter {
         title
@@ -46,23 +50,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-// export const pageQuery = graphql`
-//   query BlogPostBySlug($slug: String!) {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     markdownRemark(fields: { slug: { eq: $slug } }) {
-//       id
-//       excerpt(pruneLength: 160)
-//       html
-//       frontmatter {
-//         title
-//         date(formatString: "MMMM DD, YYYY")
-//         description
-//       }
-//     }
-//   }
-// `;

@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: 'Oooo',
+    title: "Tegan's Coffee",
     author: 'Tegan Rauh',
-    description: 'A starter blog demonstrating what Gatsby can do.',
+    description: 'The (mostly) developer blog of Tegan Rauh',
     siteUrl: 'https://nrauh.github.io/',
     social: {
-      twitter: 'NateThePirate',
+      twitter: 'tegandbiscuits',
       github: 'nrauh',
     },
   },

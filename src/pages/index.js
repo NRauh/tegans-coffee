@@ -2,12 +2,15 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import PostHeader from '../components/post-header';
+import SEO from '../components/seo';
 
 const BlogIndex = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
 
   return (
     <Layout>
+      <SEO />
+
       {posts.map(({ node: post }) => (
         <article key={post.fields.slug}>
           <PostHeader
@@ -42,28 +45,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-// export const pageQuery = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-//       edges {
-//         node {
-//           excerpt
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             date(formatString: "MMMM DD, YYYY")
-//             title
-//             description
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
