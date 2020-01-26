@@ -37,7 +37,7 @@ const PostHeader = props => {
 
       <SubtitleTag css={subtitleStyles}>
         {date}
-        &mdash;
+        &nbsp;&mdash;&nbsp;
         {readingTime}
       </SubtitleTag>
     </header>
