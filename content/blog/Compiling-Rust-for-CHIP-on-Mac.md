@@ -2,6 +2,7 @@
 title: Cross Compiling Rust for CHIP on macOS
 date: 2017-09-04
 categories: [Rust, CHIP, macOS]
+published: true
 ---
 
 So you've got a CHIP microcomputer, and you want to write some stuff in Rust for it.

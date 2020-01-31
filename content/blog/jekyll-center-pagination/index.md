@@ -2,6 +2,7 @@
 title: How to Make a Centered Pagination (with Jekyll)
 date: 2016-10-28
 category: Jekyll
+published: true
 ---
 
 Here is a quick way how you can make make a pagination that indicates the current page with a few pages around it. This is specific example is done with the Liquid syntax in Jekyll, with pagination done via the Octopress Paginate plugin. But the concept is pretty simple, so you should be apple to apply it to most other templating engines.

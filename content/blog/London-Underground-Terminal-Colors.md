@@ -2,6 +2,7 @@
 title: Make your terminal pretty with the London Underground
 date: 2017-02-07
 category: Terminal
+published: true
 ---
 
 Like the Tube? Like using a terminal? Like nice colors for that terminal? Well you're in luck! Because Transport for London's official colors make a nice theme for your terminal (mostly).
