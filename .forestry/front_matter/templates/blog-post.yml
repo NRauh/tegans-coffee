@@ -15,3 +15,5 @@ fields:
   name: published
   label: Published
   default: false
+pages:
+- content/blog/building-accessible-focuses-with-focus-visible.md
