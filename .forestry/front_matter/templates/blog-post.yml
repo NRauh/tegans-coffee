@@ -11,3 +11,7 @@ fields:
 - type: list
   name: categories
   label: categories
+- type: boolean
+  name: published
+  label: Published
+  default: false
