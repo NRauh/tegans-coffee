@@ -4,13 +4,13 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
+  label: Title
 - type: datetime
   name: date
-  label: date
+  label: Date
 - type: list
   name: categories
-  label: categories
+  label: Categories
 - type: boolean
   name: published
   label: Published
