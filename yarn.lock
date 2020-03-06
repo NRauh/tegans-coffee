@@ -5341,13 +5341,13 @@ gatsby-plugin-manifest@^2.2.42:
     semver "^5.7.1"
     sharp "^0.23.4"
 
-gatsby-plugin-offline@^3.0.35:
-  version "3.0.35"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-3.0.35.tgz#9b074a012599b9a4f3adb9c57ce1d87fdf8d0aad"
+gatsby-plugin-offline@^3.0.36:
+  version "3.0.36"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-3.0.36.tgz#8c66c96f473b27a6ac3edf5bd9823e033e9474c7"
   dependencies:
     "@babel/runtime" "^7.7.6"
     cheerio "^1.0.0-rc.3"
-    gatsby-core-utils "^1.0.28"
+    gatsby-core-utils "^1.0.29"
     glob "^7.1.6"
     idb-keyval "^3.2.0"
     lodash "^4.17.15"
