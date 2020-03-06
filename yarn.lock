@@ -5267,11 +5267,12 @@ gatsby-cli@^2.10.0:
     ink "^2.6.0"
     ink-spinner "^3.0.1"
 
-gatsby-core-utils@^1.0.28, gatsby-core-utils@^1.0.29:
-  version "1.0.29"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.29.tgz#c19812896779f46f122ad93ab8af47f4c15a7c72"
+gatsby-core-utils@^1.0.28, gatsby-core-utils@^1.0.29, gatsby-core-utils@^1.0.30:
+  version "1.0.30"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.30.tgz#c2b61017405b01e2f34f2c57117b4716c75e010f"
   dependencies:
     ci-info "2.0.0"
+    configstore "^5.0.0"
     node-object-hash "^2.0.0"
 
 gatsby-graphiql-explorer@^0.2.34:
@@ -5422,14 +5423,14 @@ gatsby-remark-copy-linked-files@^2.1.38:
     probe-image-size "^4.1.1"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-images@^3.1.45:
-  version "3.1.45"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.1.45.tgz#e575e21575c1f75a02f3e83f9165f6a92259f1dc"
+gatsby-remark-images@^3.1.46:
+  version "3.1.46"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.1.46.tgz#4882b16ac5cc7fd1542632d1f8c96c6294a1486a"
   dependencies:
     "@babel/runtime" "^7.7.6"
     chalk "^2.4.2"
     cheerio "^1.0.0-rc.3"
-    gatsby-core-utils "^1.0.29"
+    gatsby-core-utils "^1.0.30"
     is-relative-url "^3.0.0"
     lodash "^4.17.15"
     mdast-util-definitions "^1.2.5"
